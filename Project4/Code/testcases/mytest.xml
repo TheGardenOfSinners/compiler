@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- my test cases for EvalExpr -->
+<test-case-definitions>
+
+<test-case>
+	<id>M001</id>
+	<description>Very much minus sign.</description>
+	<input>9 - ------------3</input>
+	<output>6</output>
+</test-case>
+
+<test-case>
+	<id>M002</id>
+	<description>Complicated judge.</description>
+	<input>true?((2*3=6)?(42-2=42?1:0):(54/6=8?2:3)):33</input>
+	<output>0</output>
+</test-case>
+
+<test-case>
+	<id>ME001</id>
+	<description>Wrong function error</description>
+	<input>1+ aaa(1,1)</input>
+	<exception>IllegalIdentifierException</exception>
+</test-case>
+
+<test-case>
+	<id>ME002</id>
+	<description>Scientific Notation Error.</description>
+	<input>4 + 10.E+1.5 + 1</input>
+	<exception>IllegalDecimalException</exception>
+</test-case>
+
+
+<test-case>
+	<id>ME003</id>
+	<description>Null INPUT.</description>
+	<input><![CDATA[]]></input>
+	<exception>EmptyExpressionException</exception>
+</test-case>
+
+</test-case-definitions>
